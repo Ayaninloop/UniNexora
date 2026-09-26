@@ -1,47 +1,7 @@
-const universities = [
-  {name:"FAST-NUCES", city:"Lahore • Islamabad • Karachi", type:"Computing & Engineering", code:"FAST"},
-  {name:"NUST", city:"Islamabad", type:"Engineering • CS • Sciences", code:"NU"},
-  {name:"UET Lahore", city:"Lahore • KSK", type:"Engineering & Technology", code:"UET"},
-  {name:"COMSATS", city:"Islamabad • Lahore • Other campuses", type:"Computing • Engineering", code:"CI"},
-  {name:"University of the Punjab", city:"Lahore", type:"Public University", code:"PU"},
-  {name:"GIKI", city:"Topi, KPK", type:"Engineering • Computing", code:"GK"},
-  {name:"LUMS", city:"Lahore", type:"Business • CS • Sciences", code:"LU"},
-  {name:"PIEAS", city:"Islamabad", type:"Engineering • Sciences", code:"PI"}
-];
-
-const grid = document.getElementById("uni-grid");
-const search = document.getElementById("search");
-
-function render(list){
-  grid.innerHTML = list.map(u => `
-    <article class="card">
-      <div class="uni-logo">${u.code}</div>
-      <h3>${u.name}</h3>
-      <p>${u.city}</p>
-      <span class="tag">${u.type}</span>
-    </article>`).join("");
-}
-render(universities);
-
-search.addEventListener("input", e => {
-  const q = e.target.value.toLowerCase().trim();
-  render(universities.filter(u => (u.name+" "+u.city+" "+u.type).toLowerCase().includes(q)));
-});
-
-document.getElementById("calc").addEventListener("submit", e => {
-  e.preventDefault();
-  const m = Number(document.getElementById("matric").value);
-  const i = Number(document.getElementById("inter").value);
-  const t = Number(document.getElementById("test").value);
-  const total = m*.10 + i*.40 + t*.50;
-  document.getElementById("result").textContent = `Example aggregate: ${total.toFixed(2)}%`;
-});
-
-document.getElementById("email-form").addEventListener("submit", e => {
-  e.preventDefault();
-  alert("Thanks! This demo form is ready to connect to an email service later.");
-});
-
-document.querySelector(".menu-btn").addEventListener("click", () => {
-  document.querySelector(".nav").classList.toggle("open");
-});
+const universities=[{n:"FAST-NUCES",c:"Lahore • Islamabad • Karachi",f:["Computing","Engineering","Business"],x:"F"},{n:"NUST",c:"Islamabad",f:["Computing","Engineering","Sciences"],x:"N"},{n:"UET Lahore",c:"Lahore • KSK",f:["Engineering"],x:"U"},{n:"COMSATS",c:"Islamabad • Lahore • Other campuses",f:["Computing","Engineering","Sciences"],x:"C"},{n:"University of the Punjab",c:"Lahore",f:["Sciences","Business","Computing"],x:"P"},{n:"GIKI",c:"Topi, Khyber Pakhtunkhwa",f:["Engineering","Computing","Sciences"],x:"G"},{n:"LUMS",c:"Lahore",f:["Business","Computing","Sciences"],x:"L"},{n:"PIEAS",c:"Islamabad",f:["Engineering","Sciences"],x:"PI"}];
+const grid=document.getElementById("grid"),search=document.getElementById("search"),filter=document.getElementById("filter");
+function render(){let q=search.value.toLowerCase(),f=filter.value;let a=universities.filter(u=>(u.n+" "+u.c+" "+u.f.join(" ")).toLowerCase().includes(q)&&(f=="all"||u.f.includes(f)));grid.innerHTML=a.map(u=>`<article class="ucard"><div class="umark">${u.x}</div><h3>${u.n}</h3><p>${u.c}</p><span class="tag">${u.f.join(" • ")}</span></article>`).join("")||"<p>No matches found.</p>"}render();search.oninput=render;filter.onchange=render;
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}function openM(id){document.getElementById(id).classList.add("show")}function closeM(id){document.getElementById(id).classList.remove("show")}
+function merit(){let a=+m1.value||0,b=+m2.value||0,c=+m3.value||0;mr.textContent=`Example aggregate: ${(a*.1+b*.4+c*.5).toFixed(2)}%`}function percent(){let a=+obt.value||0,b=+tot.value||0;pr.textContent=`Percentage: ${b?(a/b*100).toFixed(2):"0.00"}%`}
+function toast(s){let t=document.getElementById("toast");t.textContent=s;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2300)}
+document.getElementById("menu").onclick=()=>document.querySelector(".nav").classList.toggle("open");document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove("show")});document.getElementById("sub").onsubmit=e=>{e.preventDefault();toast("Subscribed in demo mode — connect an email service to make it live.");e.target.reset()};

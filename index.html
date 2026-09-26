@@ -1,120 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pakistan University Hub — university admissions, entry tests, merit calculators and student resources.">
-  <title>Pak Uni Hub | Pakistan University Admissions</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="logo" href="#home"><span>PU</span> Pak Uni Hub</a>
-      <button class="menu-btn" aria-label="Open menu">☰</button>
-      <nav>
-        <a href="#universities">Universities</a>
-        <a href="#tests">Entry Tests</a>
-        <a href="#calculator">Calculator</a>
-        <a href="#guides">Guides</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="badge">🇵🇰 Made for Pakistani students</div>
-          <h1>Your shortcut to <span>university admissions.</span></h1>
-          <p>Explore universities, understand entry tests, calculate merit, and follow a simple admission roadmap — all in one place.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#universities">Explore Universities</a>
-            <a class="btn secondary" href="#calculator">Calculate Merit</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="mini-label">Admission Dashboard</div>
-          <div class="stat-row"><strong>Universities</strong><span>Pakistan 🇵🇰</span></div>
-          <div class="stat-row"><strong>Entry Tests</strong><span>FAST • UET • NUST</span></div>
-          <div class="stat-row"><strong>Tools</strong><span>Merit Calculator</span></div>
-          <div class="progress"><i></i></div>
-          <small>Start with your target university →</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="universities">
-      <div class="container">
-        <div class="section-head">
-          <div><span class="eyebrow">EXPLORE</span><h2>Popular universities</h2></div>
-          <input id="search" class="search" placeholder="Search university..." aria-label="Search university">
-        </div>
-        <div id="uni-grid" class="cards"></div>
-      </div>
-    </section>
-
-    <section class="section dark" id="tests">
-      <div class="container">
-        <span class="eyebrow">PREPARE</span>
-        <h2>Know your entry test</h2>
-        <p class="muted">Use these as starting points. Always verify the current admission notice on the university's official website before applying.</p>
-        <div class="test-grid">
-          <article class="test-card"><div class="icon">⚡</div><h3>FAST</h3><p>Entry-test guidance, subject preparation and application checklist.</p><a href="#guides">View guide →</a></article>
-          <article class="test-card"><div class="icon">🎓</div><h3>NUST</h3><p>Understand NET-style preparation and organize your admission timeline.</p><a href="#guides">View guide →</a></article>
-          <article class="test-card"><div class="icon">📐</div><h3>UET</h3><p>Explore entry-test subjects, preparation and application planning.</p><a href="#guides">View guide →</a></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="calculator">
-      <div class="container calc-wrap">
-        <div>
-          <span class="eyebrow">FREE TOOL</span>
-          <h2>Merit calculator</h2>
-          <p>Enter your percentages to get an example weighted aggregate. Different universities use different formulas, so treat this as a general calculator.</p>
-          <div class="notice">Tip: Check the exact weighting published by your target university before relying on the result.</div>
-        </div>
-        <form id="calc" class="calculator">
-          <label>Matric / O-Level % <input id="matric" type="number" min="0" max="100" step="0.01" required></label>
-          <label>Intermediate / A-Level % <input id="inter" type="number" min="0" max="100" step="0.01" required></label>
-          <label>Entry Test % <input id="test" type="number" min="0" max="100" step="0.01" required></label>
-          <div class="weights"><span>Example weights: 10% + 40% + 50%</span></div>
-          <button class="btn primary" type="submit">Calculate Aggregate</button>
-          <div id="result" class="result" aria-live="polite">Your aggregate will appear here.</div>
-        </form>
-      </div>
-    </section>
-
-    <section class="section" id="guides">
-      <div class="container">
-        <span class="eyebrow">ROADMAP</span>
-        <h2>Admission checklist</h2>
-        <div class="steps">
-          <div><b>01</b><h3>Choose programs</h3><p>Shortlist your degree and universities according to your ICS/academic background.</p></div>
-          <div><b>02</b><h3>Check eligibility</h3><p>Review required subjects, minimum marks, domicile rules and test requirements.</p></div>
-          <div><b>03</b><h3>Prepare & apply</h3><p>Prepare for the relevant test, submit the application and keep your documents ready.</p></div>
-          <div><b>04</b><h3>Track merit</h3><p>Monitor merit lists, deadlines, fee vouchers and admission offers.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section newsletter">
-      <div class="container newsletter-box">
-        <div><span class="eyebrow">COMING SOON</span><h2>Admission deadline alerts</h2><p>Build an audience first. Later, connect this form to an email service and send deadline reminders.</p></div>
-        <form id="email-form"><input type="email" placeholder="Your email" required><button class="btn primary">Join</button></form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer">
-      <div><a class="logo" href="#home"><span>PU</span> Pak Uni Hub</a><p>Independent student resource. Verify current admission information with official university sources.</p></div>
-      <div><strong>Sections</strong><a href="#universities">Universities</a><a href="#tests">Entry Tests</a><a href="#calculator">Calculator</a></div>
-      <div><strong>For students</strong><a href="#guides">Admission Roadmap</a><a href="#home">Home</a></div>
-    </div>
-    <div class="copyright">© 2026 Pak Uni Hub • First version</div>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b7a53"><meta name="description" content="Pak Uni Hub — Pakistani university admissions, entry tests, merit tools and student resources."><title>Pak Uni Hub — Your University Journey Starts Here</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="header"><div class="container nav"><a class="brand" href="#home"><span class="mark">PU</span>Pak Uni <b>Hub</b></a><button class="menu" id="menu">☰</button><nav id="nav"><a href="#universities">Universities</a><a href="#tools">Tools</a><a href="#tests">Entry Tests</a><a href="#guides">Guides</a><a href="#about">About</a></nav><button class="navbtn" onclick="go('tools')">Explore tools →</button></div></header>
+<main id="home"><section class="hero"><div class="container hero-grid"><div><span class="pill">🇵🇰 Built for students in Pakistan</span><h1>Make your university journey <em>simpler.</em></h1><p>Find universities, explore entry tests, estimate merit and organize your admission journey — all in one clean student dashboard.</p><div class="actions"><a class="btn primary" href="#universities">Find a university</a><a class="btn ghost" href="#tools">Try free tools</a></div><div class="trust">✓ Free to use &nbsp; ✓ Mobile friendly &nbsp; ✓ Student focused</div></div><div class="dashboard"><div class="dashhead"><b>My Admission Dashboard</b><span>● LIVE</span></div><div class="next"><small>Next step</small><strong>Check your target university</strong><i>→</i></div><div class="stats"><div><b>8+</b><small>Universities</small></div><div><b>3</b><small>Core tools</small></div><div><b>∞</b><small>Planning</small></div></div><div class="progress"><i></i></div><small>Your journey starts here</small></div></div></section>
+<section class="quick"><div class="container quickgrid"><a href="#universities">🎓 <span><b>Find Universities</b><small>Browse popular choices</small></span></a><a href="#calculator">🧮 <span><b>Calculate Merit</b><small>Estimate your aggregate</small></span></a><a href="#tests">📝 <span><b>Entry Tests</b><small>Know what to prepare</small></span></a><a href="#guides">🗺️ <span><b>Admission Roadmap</b><small>From shortlist to admission</small></span></a></div></section>
+<section class="section" id="universities"><div class="container"><div class="head"><div><label>EXPLORE</label><h2>Popular universities</h2><p>Start your shortlist. Verify current requirements on official university websites.</p></div><div class="filters"><input id="search" placeholder="🔎 Search university"><select id="filter"><option value="all">All fields</option><option>Computing</option><option>Engineering</option><option>Business</option><option>Sciences</option></select></div></div><div id="grid" class="ugrid"></div></div></section>
+<section class="section tinted" id="tools"><div class="container"><div class="head"><div><label>FREE TOOLS</label><h2>Tools students actually need</h2><p>Simple calculators and planning tools — no account required.</p></div></div><div class="toolgrid"><article><span>🧮</span><small>MOST USED</small><h3>Merit Calculator</h3><p>Estimate an example aggregate from academic and test percentages.</p><button onclick="openM('merit')">Open calculator →</button></article><article><span>📊</span><h3>Marks → Percentage</h3><p>Convert obtained marks into a percentage instantly.</p><button onclick="openM('percent')">Calculate →</button></article><article><span>📅</span><h3>Admission Planner</h3><p>Organize the steps you need before an application deadline.</p><button onclick="toast('Planner feature is ready for the next update 🚀')">Plan my admission →</button></article><article><span>🔍</span><h3>Course Finder</h3><p>Explore broad areas such as CS, engineering, business and sciences.</p><button onclick="go('universities')">Explore fields →</button></article></div></div></section>
+<section class="section dark" id="tests"><div class="container"><div class="head"><div><label>PREPARE SMARTER</label><h2>Entry-test hub</h2><p>Planning starting points. Exact patterns can change by admission cycle.</p></div></div><div class="testgrid"><article><b>F</b><h3>FAST</h3><small>Computing • Engineering • Business</small><p>Build a subject checklist, practice plan and application timeline.</p><button onclick="toast('FAST guide selected')">View guide →</button></article><article><b>N</b><h3>NUST</h3><small>NET • Engineering • CS • Sciences</small><p>Organize preparation around your target program and test requirements.</p><button onclick="toast('NUST guide selected')">View guide →</button></article><article><b>U</b><h3>UET</h3><small>Engineering • Technology</small><p>Focus preparation on subjects relevant to your program.</p><button onclick="toast('UET guide selected')">View guide →</button></article><article><b>C</b><h3>COMSATS</h3><small>Computing • Engineering • Sciences</small><p>Use a structured checklist before applications and preparation.</p><button onclick="toast('COMSATS guide selected')">View guide →</button></article></div></div></section>
+<section class="section" id="guides"><div class="container"><div class="head"><div><label>YOUR ROADMAP</label><h2>From ICS to university</h2><p>A simple workflow you can follow for almost any admission cycle.</p></div></div><div class="steps"><article><b>01</b><h3>Choose your field</h3><p>Decide whether you want computing, engineering, business, sciences or another area.</p></article><article><b>02</b><h3>Shortlist universities</h3><p>Compare programs, locations, eligibility and current admission information.</p></article><article><b>03</b><h3>Prepare for the test</h3><p>Identify required subjects and create a realistic study schedule.</p></article><article><b>04</b><h3>Apply & track</h3><p>Submit applications and monitor merit lists, deadlines and offers.</p></article></div></div></section>
+<section class="section"><div class="container subscribe"><div><label>STAY UPDATED</label><h2>Admission alerts, without the noise.</h2><p>Connect this demo form to an email service later for deadline reminders and new guides.</p></div><form id="sub"><input type="email" required placeholder="Enter your email"><button class="btn primary">Subscribe</button></form></div></section>
+<section class="section" id="about"><div class="container about"><div><label>ABOUT</label><h2>Built to make admissions less confusing.</h2></div><p>Pak Uni Hub is an independent student-resource template. Dates, fees, eligibility rules and test patterns should always be checked against the relevant university's current official notice.</p></div></section></main>
+<footer><div class="container foot"><div><a class="brand" href="#home"><span class="mark">PU</span>Pak Uni <b>Hub</b></a><p>Your student-focused university planning hub.</p></div><div><b>Explore</b><a href="#universities">Universities</a><a href="#tests">Entry Tests</a><a href="#tools">Tools</a></div><div><b>Plan</b><a href="#guides">Admission Roadmap</a><a href="#calculator">Merit Calculator</a></div></div><div class="copy">© 2026 Pak Uni Hub · Version 2</div></footer>
+<div class="modal" id="merit"><div class="box"><button onclick="closeM('merit')">×</button><label>MERIT CALCULATOR</label><h2>Estimate your aggregate</h2><p>Example: 10% Matric + 40% Intermediate + 50% Entry Test.</p><input id="m1" type="number" placeholder="Matric / O-Level %"><input id="m2" type="number" placeholder="Intermediate / A-Level %"><input id="m3" type="number" placeholder="Entry Test %"><button class="btn primary full" onclick="merit()">Calculate</button><div id="mr" class="result">Your result appears here.</div></div></div>
+<div class="modal" id="percent"><div class="box"><button onclick="closeM('percent')">×</button><label>PERCENTAGE</label><h2>Marks calculator</h2><input id="obt" type="number" placeholder="Obtained marks"><input id="tot" type="number" placeholder="Total marks"><button class="btn primary full" onclick="percent()">Calculate</button><div id="pr" class="result">Your percentage appears here.</div></div></div>
+<div id="toast" class="toast"></div><script src="script.js"></script></body></html>
