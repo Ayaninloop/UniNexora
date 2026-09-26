@@ -1,106 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#081b17">
-<meta name="description" content="UniNexora — Pakistan University Admission Hub">
-<title>UniNexora — Pakistan University Admission Hub</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#06100d" />
+  <meta name="description" content="UniNexora — explore universities, entry tests, merit tools and admission planning in one place." />
+  <title>UniNexora — University Admission Hub</title>
+  <link rel="icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="header">
-  <a class="brand" href="#home"><img src="logo.jpg" alt="UniNexora logo"><span>Uni<span>Nexora</span></span></a>
-  <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
-  <nav id="nav">
-    <a href="#home">Home</a><a href="#universities">Universities</a><a href="#tests">Tests</a>
-    <a href="#tools">Tools</a><a href="#tracker">Tracker</a>
-    <button class="profile-btn" id="profileBtn">Login</button>
-  </nav>
-</header>
+  <div class="bg-orb orb-a"></div><div class="bg-orb orb-b"></div>
 
-<main>
-<section id="home" class="page active">
-  <div class="hero">
-    <div>
-      <span class="pill">🇵🇰 Student admission hub</span>
-      <h1>Your university journey, <em>organized.</em></h1>
-      <p>Explore Pakistani universities, understand entry tests, calculate merit and manage your admission targets in one place.</p>
-      <div class="actions"><a class="btn primary" href="#universities">Explore universities →</a><a class="btn ghost" href="#tools">Try free tools</a></div>
-      <div class="trust">✓ Free tools &nbsp; ✓ Mobile friendly &nbsp; ✓ Student focused</div>
-    </div>
-    <div class="hero-card">
-      <div class="card-top"><b>My Dashboard</b><span class="live">● LOCAL</span></div>
-      <div class="dash-main"><span id="nextStep">Explore your target universities</span><a href="#tracker">→</a></div>
-      <div class="stats"><div><b id="saved">0</b><small>Saved</small></div><div><b id="applied">0</b><small>Applied</small></div><div><b id="upcoming">0</b><small>Upcoming</small></div></div>
-    </div>
-  </div>
-  <div class="section-head"><span class="eyebrow">Explore</span><h2>Everything you need</h2></div>
-  <div class="feature-grid">
-    <a class="feature" href="#universities">🎓<b>Find Universities</b><small>Search by city, sector and field.</small></a>
-    <a class="feature" href="#tests">📝<b>Entry Tests</b><small>Explore common admission tests.</small></a>
-    <a class="feature" href="#tools">🧮<b>Free Tools</b><small>Calculate percentages and merit.</small></a>
-    <a class="feature" href="#tracker">📅<b>Admission Tracker</b><small>Organize your applications.</small></a>
-  </div>
-</section>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="UniNexora home">
+      <img src="logo.png" alt="UniNexora logo">
+      <span>UniNexora</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#universities">Universities</a>
+      <a href="#tests">Entry Tests</a>
+      <a href="#tools">Tools</a>
+      <a href="#tracker">Tracker</a>
+      <button class="nav-profile" id="profileBtn">Create Profile</button>
+      <button class="theme-btn" id="themeBtn" title="Toggle theme">◐</button>
+    </nav>
+  </header>
 
-<section id="universities" class="page">
-  <div class="title"><span class="pill">University explorer</span><h1>Find your university</h1><p>Search the directory and verify current admission details on official university websites.</p></div>
-  <div class="filters"><input id="search" placeholder="Search university, city or field…"><select id="sector"><option value="">All sectors</option><option>Public</option><option>Private</option></select><select id="city"><option value="">All cities</option></select><select id="field"><option value="">All fields</option></select></div>
-  <div class="result-count" id="count"></div><div class="uni-grid" id="uniGrid"></div>
-</section>
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Pakistan university admission companion</div>
+          <h1>Turn your university journey into a <em>clear plan.</em></h1>
+          <p>Explore universities, understand entry tests, calculate merit and track your admission targets — all from one browser-based dashboard.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#universities">Explore Universities →</a>
+            <a class="btn ghost" href="#tools">Open Merit Tools</a>
+          </div>
+          <div class="trust-row"><span>✓ No account required</span><span>✓ Works on GitHub Pages</span><span>✓ Data stays in your browser</span></div>
+        </div>
+        <div class="hero-card">
+          <div class="mini-top"><span>MY ADMISSION BOARD</span><b id="heroProfile">Guest</b></div>
+          <div class="progress-ring"><strong id="heroProgress">0%</strong><small>tracked</small></div>
+          <div class="hero-stat-grid">
+            <div><b id="hTargets">0</b><span>Targets</span></div>
+            <div><b id="hDone">0</b><span>Completed</span></div>
+            <div><b id="hSaved">0</b><span>Saved</span></div>
+          </div>
+        </div>
+      </div>
 
-<section id="tests" class="page">
-  <div class="title"><span class="pill">Admission tests</span><h1>Know your entry tests</h1><p>Patterns and dates can change. Always confirm the current cycle from the official portal.</p></div>
-  <div class="test-grid" id="testGrid"></div>
-</section>
+      <div class="section-head">
+        <div><span class="kicker">WHAT YOU GET</span><h2>Everything important, in one place.</h2></div>
+      </div>
+      <div class="feature-grid">
+        <a class="feature-card" href="#universities"><span class="icon">⌘</span><h3>University Explorer</h3><p>Search by university, city, sector and field, then open official websites.</p><b>Explore →</b></a>
+        <a class="feature-card" href="#tests"><span class="icon">◎</span><h3>Entry Test Guide</h3><p>See common test routes and the subjects you should prepare for.</p><b>View tests →</b></a>
+        <a class="feature-card" href="#tools"><span class="icon">∑</span><h3>Merit Calculator</h3><p>Calculate percentages, weighted merit and entry-test scores instantly.</p><b>Calculate →</b></a>
+        <a class="feature-card" href="#tracker"><span class="icon">✓</span><h3>Admission Tracker</h3><p>Keep your target universities and update each application stage.</p><b>Track →</b></a>
+      </div>
 
-<section id="tools" class="page">
-  <div class="title"><span class="pill">Free tools</span><h1>Calculate your numbers</h1><p>Quick calculators for common admission planning.</p></div>
-  <div class="tool-grid">
-    <article class="tool"><h2>Percentage</h2><div class="two"><input id="po" type="number" placeholder="Obtained"><input id="pt" type="number" placeholder="Total"></div><button class="btn primary full" onclick="percentage()">Calculate</button><output id="pr">Result appears here.</output></article>
-    <article class="tool"><h2>Weighted Merit</h2><div class="two"><input id="ma" type="number" placeholder="Academic %"><input id="mw" type="number" placeholder="Academic weight %"><input id="mt" type="number" placeholder="Test %"><input id="tw" type="number" placeholder="Test weight %"></div><button class="btn primary full" onclick="merit()">Calculate</button><output id="mr">Weights must total 100%.</output></article>
-    <article class="tool"><h2>Test Score</h2><div class="two"><input id="sc" type="number" placeholder="Correct"><input id="st" type="number" placeholder="Total questions"></div><button class="btn primary full" onclick="score()">Calculate</button><output id="sr">Result appears here.</output></article>
-  </div>
-</section>
+      <div class="notice">
+        <div class="notice-icon">i</div>
+        <div><strong>Important</strong><p>Admission dates, eligibility and fee rules can change. Always confirm final details on the university's official website.</p></div>
+      </div>
+    </section>
 
-<section id="tracker" class="page">
-  <div class="title row"><div><span class="pill">My plan</span><h1>Admission tracker</h1><p id="trackerInfo">Your profile and tracker are stored securely in this browser only.</p></div><button class="btn primary" id="addBtn">+ Add target</button></div>
-  <div class="tracker-stats"><div><b id="tt">0</b><small>Total</small></div><div><b id="ta">0</b><small>Applied</small></div><div><b id="tp">0</b><small>Test planned</small></div><div><b id="td">0</b><small>Completed</small></div></div>
-  <div id="targets"></div><div id="empty" class="empty"><h2>📋 No targets yet</h2><p>Save a university from the explorer to start your plan.</p></div>
-</section>
-</main>
+    <section id="universities" class="page">
+      <div class="page-title"><span class="kicker">UNIVERSITY EXPLORER</span><h1>Find your next campus.</h1><p>Filter a curated starter list and open the official university website for current admission information.</p></div>
+      <div class="control-panel">
+        <label class="searchbox">⌕ <input id="uniSearch" placeholder="Search university, city or field..." /></label>
+        <select id="sectorFilter"><option value="">All sectors</option><option>Public</option><option>Private</option></select>
+        <select id="cityFilter"><option value="">All cities</option></select>
+        <select id="fieldFilter"><option value="">All fields</option><option>Computing</option><option>Engineering</option><option>Business</option><option>Science</option><option>General</option></select>
+      </div>
+      <div class="result-line"><span id="uniCount">0 universities</span><button class="text-btn" id="clearFilters">Clear filters</button></div>
+      <div id="uniGrid" class="uni-grid"></div>
+    </section>
 
-<footer><b>UniNexora</b><span>Pakistan University Admission Hub</span><span>Browser-only version • No server required</span></footer>
+    <section id="tests" class="page">
+      <div class="page-title"><span class="kicker">ENTRY TESTS</span><h1>Know the test route before you prepare.</h1><p>Use this as a planning guide. Exact patterns and dates should be verified from the official testing body or university.</p></div>
+      <div id="testGrid" class="test-grid"></div>
+    </section>
 
-<!-- Local browser account -->
-<div class="modal" id="authModal" hidden>
-  <div class="modal-box">
-    <button class="close" onclick="closeAuth()">×</button>
-    <img src="logo.jpg" alt="">
-    <h2 id="authTitle">Create your profile</h2>
-    <p class="modal-note">This is a local profile. Your data stays in this browser/device.</p>
-    <input id="authName" placeholder="Your name">
-    <input id="authUser" placeholder="Username">
-    <input id="authPass" type="password" placeholder="Password (8+ characters)">
-    <button class="btn primary full" id="authAction">Create profile</button>
-    <p id="authSwitch">Already have a profile? <button onclick="switchAuth()">Login</button></p>
-    <small id="authMsg"></small>
-  </div>
-</div>
+    <section id="tools" class="page">
+      <div class="page-title"><span class="kicker">SMART TOOLS</span><h1>Calculate. Compare. Plan.</h1><p>Quick browser calculators for common admission-planning tasks.</p></div>
+      <div class="tools-grid">
+        <article class="tool-card"><div class="tool-head"><span>01</span><h3>Percentage</h3></div><label>Obtained marks<input id="pctObt" type="number" min="0"></label><label>Total marks<input id="pctTotal" type="number" min="1"></label><button class="btn primary full" id="pctBtn">Calculate</button><div class="answer" id="pctAns">—</div></article>
+        <article class="tool-card"><div class="tool-head"><span>02</span><h3>Weighted Merit</h3></div><label>Academic %<input id="meritAcademic" type="number" min="0" max="100"></label><label>Academic weight %<input id="meritAw" type="number" min="0" max="100" value="50"></label><label>Test %<input id="meritTest" type="number" min="0" max="100"></label><label>Test weight %<input id="meritTw" type="number" min="0" max="100" value="50"></label><button class="btn primary full" id="meritBtn">Calculate</button><div class="answer" id="meritAns">—</div></article>
+        <article class="tool-card"><div class="tool-head"><span>03</span><h3>Test Score</h3></div><label>Correct answers<input id="scoreCorrect" type="number" min="0"></label><label>Wrong answers<input id="scoreWrong" type="number" min="0"></label><label>Total questions<input id="scoreTotal" type="number" min="1"></label><label>Negative marking / wrong<input id="scoreNeg" type="number" min="0" step="0.01" value="0"></label><button class="btn primary full" id="scoreBtn">Calculate</button><div class="answer" id="scoreAns">—</div></article>
+      </div>
+    </section>
 
-<div class="modal" id="targetModal" hidden>
-  <div class="modal-box">
-    <button class="close" onclick="closeTarget()">×</button>
-    <h2>Add admission target</h2>
-    <input id="targetUni" placeholder="University name">
-    <label>Application deadline</label><input id="targetDeadline" type="date">
-    <label>Test date</label><input id="targetTest" type="date">
-    <select id="targetStatus"><option>Researching</option><option>Applied</option><option>Test planned</option><option>Completed</option></select>
-    <button class="btn primary full" onclick="saveTarget()">Save target</button>
-  </div>
-</div>
+    <section id="tracker" class="page">
+      <div class="page-title"><span class="kicker">ADMISSION TRACKER</span><h1>Your application command center.</h1><p>Create a local profile and track universities directly in this browser.</p></div>
+      <div class="tracker-top">
+        <div class="tracker-card"><span>Total targets</span><b id="tTotal">0</b></div>
+        <div class="tracker-card"><span>In progress</span><b id="tProgress">0</b></div>
+        <div class="tracker-card"><span>Completed</span><b id="tCompleted">0</b></div>
+        <button class="btn primary" id="addTargetBtn">+ Add target</button>
+      </div>
+      <div id="targets" class="targets"></div>
+      <div class="empty-state" id="emptyState"><div>◎</div><h3>No targets yet</h3><p>Add universities from the explorer or use “Add target”.</p><a href="#universities" class="btn ghost">Browse universities</a></div>
+    </section>
+  </main>
 
-<script src="script.js"></script>
+  <footer><div class="footer-brand"><img src="logo.png" alt=""><strong>UniNexora</strong></div><p>Explore • Plan • Achieve</p><span>© <span id="year"></span> UniNexora</span></footer>
+
+  <div class="modal" id="profileModal"><div class="modal-box"><button class="close" data-close="profileModal">×</button><span class="kicker">LOCAL PROFILE</span><h2 id="authTitle">Create your profile</h2><p class="muted">This profile is stored only in this browser using localStorage. It is not a secure online account.</p><input id="profileName" placeholder="Your name"><input id="profileEmail" type="email" placeholder="Email (optional)"><button class="btn primary full" id="saveProfile">Save profile</button><button class="text-btn full" id="logoutBtn">Log out</button></div></div>
+
+  <div class="modal" id="targetModal"><div class="modal-box"><button class="close" data-close="targetModal">×</button><span class="kicker">ADMISSION TARGET</span><h2>Add university</h2><input id="targetUni" placeholder="University name"><select id="targetStatus"><option>Planning</option><option>Preparing</option><option>Applied</option><option>Test completed</option><option>Admitted</option></select><button class="btn primary full" id="saveTarget">Add to tracker</button></div></div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
 </body>
 </html>
